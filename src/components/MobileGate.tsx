@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { shouldBlockMobile } from '../utils/device'
 import { EASE_OUT_EXPO } from '../animations'
 import './MobileGate.css'
@@ -79,8 +79,6 @@ export function MobileGate({ onPass }: MobileGateProps) {
             alt="бин"
             draggable={false}
           />
-
-        
       </motion.div>
     </div>
   )
