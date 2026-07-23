@@ -1,0 +1,57 @@
+.scroll-arrow {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  z-index: 5;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.scroll-arrow:hover:not(:disabled) {
+  opacity: 1;
+}
+
+.scroll-arrow--disabled {
+  cursor: not-allowed;
+}
+
+.scroll-arrow--disabled .scroll-arrow__text {
+  max-width: 160px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.scroll-arrow--act1 {
+  color: var(--act1-muted);
+}
+
+.scroll-arrow--act2 {
+  color: var(--act2-muted);
+}
+
+.scroll-arrow__text {
+  letter-spacing: 0.12em;
+}
+
+.scroll-arrow__line {
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: currentColor;
+  transform-origin: top;
+}
+
+@media (max-width: 640px) {
+  .scroll-arrow {
+    bottom: 1.25rem;
+  }
+
+  .scroll-arrow__line {
+    height: 28px;
+  }
+}

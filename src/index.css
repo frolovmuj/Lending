@@ -1,0 +1,89 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-display: "Bebas Neue", sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-hello: "Cormorant Garamond", "Instrument Serif", Georgia, serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-sf: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Helvetica Neue", sans-serif;
+
+  --act1-bg: #f0e6c8;
+  --act1-text: #1a1a1a;
+  --act1-muted: rgba(26, 26, 26, 0.55);
+  --act1-accent: #c4a035;
+
+  --act2-bg: #e8c4cc;
+  --act2-text: #2a1520;
+  --act2-muted: rgba(42, 21, 32, 0.55);
+  --act2-accent: #8b3a52;
+
+  --act3-bg: #0a0a0a;
+  --act3-text: #f5f0eb;
+  --act3-muted: rgba(245, 240, 235, 0.5);
+  --act3-accent: #e8c4cc;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --page-pad: clamp(1.25rem, 4vw, 3rem);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-serif);
+  background: var(--act1-bg);
+  color: var(--act1-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.display--split span {
+  display: block;
+}
+
+.body-serif {
+  font-family: var(--font-serif);
+  font-size: clamp(0.9375rem, 1.6vw, 1.0625rem);
+  line-height: 1.55;
+}

@@ -1,0 +1,72 @@
+.chrome {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 1.25rem var(--page-pad);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  color: #fff;
+}
+
+.chrome--top {
+  top: 0;
+}
+
+.chrome--bottom {
+  bottom: 0;
+}
+
+.chrome__item:first-child {
+  justify-self: start;
+}
+
+.chrome__item:last-child {
+  justify-self: end;
+}
+
+.chrome__center {
+  justify-self: center;
+  text-align: center;
+}
+
+.chrome__spacer {
+  width: 40px;
+  height: 40px;
+  visibility: hidden;
+}
+
+.chrome__gif-layer {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  z-index: 21;
+  /* transform: translateX(-50%);
+  pointer-events: none; */
+}
+
+.chrome__gif {
+  display: block;
+  width: 40px;
+  height: 40px;
+  /* object-fit: cover; */
+  border-radius: 8px;
+  border: 1px solid rgba(42, 21, 32, 0.12);
+}
+
+@media (max-width: 640px) {
+  .chrome__center {
+    display: none;
+  }
+
+  .chrome__gif-layer {
+    display: none;
+  }
+
+  .chrome {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,259 @@
+.food {
+  width: 100%;
+  max-width: 1280px;
+}
+
+.food__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px) minmax(0, 0.65fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.food__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.food__tag {
+  color: var(--act3-muted);
+}
+
+.food__headline {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  color: var(--act3-text);
+}
+
+.food__act {
+  letter-spacing: 0.14em;
+  color: var(--act3-accent);
+}
+
+.food__lead {
+  max-width: 28ch;
+  color: var(--act3-muted);
+}
+
+.food__booking {
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(245, 240, 235, 0.1);
+}
+
+.food__booking .label {
+  color: var(--act3-muted);
+  margin-bottom: 0.35rem;
+}
+
+.food__booking-text {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  font-style: italic;
+}
+
+.food__summary-panel {
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(245, 240, 235, 0.1);
+}
+
+.food__summary-title {
+  margin-bottom: 0.75rem;
+  color: var(--act3-muted);
+}
+
+.food__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.food__meta-row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.food__meta-row .label {
+  color: var(--act3-muted);
+}
+
+.food__list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(245, 240, 235, 0.12);
+  border-bottom: 1px solid rgba(245, 240, 235, 0.12);
+}
+
+.food__item {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(245, 240, 235, 0.08);
+  text-align: left;
+  transition: opacity 0.3s, padding-left 0.4s var(--ease-out-expo);
+}
+
+.food__item:last-child {
+  border-bottom: none;
+}
+
+.food__item:hover {
+  padding-left: 0.5rem;
+}
+
+.food__item--selected {
+  opacity: 1;
+}
+
+.food__item--selected .food__item-en {
+  color: var(--act3-accent);
+}
+
+.food__item-index {
+  color: var(--act3-muted);
+  font-size: 0.625rem;
+}
+
+.food__item-names {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.food__item-en {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+  transition: color 0.3s;
+}
+
+.food__item-ru {
+  font-family: var(--font-serif);
+  font-size: 0.8125rem;
+  color: var(--act3-muted);
+  font-style: italic;
+}
+
+.food__item-mark {
+  font-size: 0.75rem;
+  color: var(--act3-muted);
+  transition: color 0.3s;
+}
+
+.food__item--selected .food__item-mark {
+  color: var(--act3-accent);
+}
+
+.food__aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-end;
+  text-align: right;
+  padding-top: 1rem;
+}
+
+.food__index {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: rgba(245, 240, 235, 0.12);
+}
+
+.food__gif {
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(42, 21, 32, 0.12);
+}
+.food__caption {
+  max-width: 42ch;
+  color: var(--act3-muted);
+  font-style: italic;
+}
+
+.food__confirm-panel {
+  width: 100%;
+  padding: 1.25rem;
+  border: 1px solid rgba(245, 240, 235, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  text-align: left;
+}
+
+.food__confirm-panel .label {
+  color: var(--act3-muted);
+}
+
+.food__selected {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.food__confirm {
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--act3-text);
+  color: var(--act3-bg);
+  align-self: flex-start;
+  transition: opacity 0.3s;
+}
+
+.food__confirm:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.food__status {
+  margin-top: 0.35rem;
+  letter-spacing: 0.06em;
+}
+
+.food__status--success {
+  color: var(--act3-accent);
+}
+
+.food__status--error {
+  color: #ff6b6b;
+}
+
+.food__error {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.food__mailto {
+  color: var(--act3-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 960px) {
+  .food__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .food__list {
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .food__aside {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
