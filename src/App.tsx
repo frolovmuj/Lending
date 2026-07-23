@@ -4,12 +4,15 @@ import { HeroSlide } from './components/HeroSlide'
 import { CalendarSlide } from './components/CalendarSlide'
 import { FoodSlide } from './components/FoodSlide'
 import { ScrollArrow } from './components/ScrollArrow'
+import { MobileGate } from './components/MobileGate'
+import { shouldBlockMobile } from './utils/device'
 import './App.css'
 
 const SLIDES = ['hero', 'calendar', 'food'] as const
 const FOOD_SLIDE_INDEX = 2
 
 export default function App() {
+  const [canEnter, setCanEnter] = useState(() => !shouldBlockMobile())
   const containerRef = useRef<HTMLDivElement>(null)
   const [activeSlide, setActiveSlide] = useState(0)
   const [selectedDateId, setSelectedDateId] = useState<string | null>(null)
@@ -68,6 +71,10 @@ export default function App() {
     if (!selectedDateId || !selectedTime) return
     setInvitationAccepted(true)
   }, [selectedDateId, selectedTime])
+
+  if (!canEnter) {
+    return <MobileGate onPass={() => setCanEnter(true)} />
+  }
 
   return (
     <div className="app">
