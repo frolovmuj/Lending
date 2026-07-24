@@ -5,6 +5,7 @@ import { CalendarSlide } from './components/CalendarSlide'
 import { FoodSlide } from './components/FoodSlide'
 import { ScrollArrow } from './components/ScrollArrow'
 import { MobileGate } from './components/MobileGate'
+import { useDesktopLayout } from './hooks/useDesktopLayout'
 import { shouldBlockMobile } from './utils/device'
 import './App.css'
 
@@ -71,6 +72,27 @@ export default function App() {
     if (!selectedDateId || !selectedTime) return
     setInvitationAccepted(true)
   }, [selectedDateId, selectedTime])
+
+  useEffect(() => {
+    const syncAccess = () => {
+      setCanEnter(!shouldBlockMobile())
+    }
+
+    syncAccess()
+    const interval = window.setInterval(syncAccess, 500)
+    window.addEventListener('resize', syncAccess)
+    window.addEventListener('orientationchange', syncAccess)
+    window.addEventListener('pageshow', syncAccess)
+
+    return () => {
+      window.clearInterval(interval)
+      window.removeEventListener('resize', syncAccess)
+      window.removeEventListener('orientationchange', syncAccess)
+      window.removeEventListener('pageshow', syncAccess)
+    }
+  }, [])
+
+  useDesktopLayout(canEnter)
 
   if (!canEnter) {
     return <MobileGate onPass={() => setCanEnter(true)} />

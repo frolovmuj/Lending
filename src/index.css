@@ -51,6 +51,16 @@ body {
   min-height: 100dvh;
 }
 
+html.site-desktop #root,
+html.site-desktop .app {
+  min-width: 1280px;
+}
+
+html.site-desktop body {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 button {
   font-family: inherit;
   cursor: pointer;
